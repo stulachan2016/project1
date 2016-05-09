@@ -1,0 +1,14 @@
+current directory: /home/stulachan/667-workspace/heroku/poker/vendor/bundle/ruby/2.1.0/gems/json-1.8.3/ext/json
+/usr/bin/ruby2.1 -r ./siteconf20160509-6168-1enuf7i.rb extconf.rb
+creating Makefile
+
+current directory: /home/stulachan/667-workspace/heroku/poker/vendor/bundle/ruby/2.1.0/gems/json-1.8.3/ext/json
+make "DESTDIR=" clean
+
+current directory: /home/stulachan/667-workspace/heroku/poker/vendor/bundle/ruby/2.1.0/gems/json-1.8.3/ext/json
+make "DESTDIR="
+make: Nothing to be done for 'all'.
+
+current directory: /home/stulachan/667-workspace/heroku/poker/vendor/bundle/ruby/2.1.0/gems/json-1.8.3/ext/json
+make "DESTDIR=" install
+installing default libraries

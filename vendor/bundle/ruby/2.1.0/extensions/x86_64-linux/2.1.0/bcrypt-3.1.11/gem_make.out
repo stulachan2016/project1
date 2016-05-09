@@ -1,0 +1,20 @@
+current directory: /home/stulachan/667-workspace/heroku/poker/vendor/bundle/ruby/2.1.0/gems/bcrypt-3.1.11/ext/mri
+/usr/bin/ruby2.1 -r ./siteconf20160509-6168-1pl6a6q.rb extconf.rb
+creating Makefile
+
+current directory: /home/stulachan/667-workspace/heroku/poker/vendor/bundle/ruby/2.1.0/gems/bcrypt-3.1.11/ext/mri
+make "DESTDIR=" clean
+
+current directory: /home/stulachan/667-workspace/heroku/poker/vendor/bundle/ruby/2.1.0/gems/bcrypt-3.1.11/ext/mri
+make "DESTDIR="
+compiling wrapper.c
+compiling crypt.c
+compiling crypt_gensalt.c
+compiling bcrypt_ext.c
+compiling crypt_blowfish.c
+linking shared-object bcrypt_ext.so
+
+current directory: /home/stulachan/667-workspace/heroku/poker/vendor/bundle/ruby/2.1.0/gems/bcrypt-3.1.11/ext/mri
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bcrypt_ext.so ./.gem.20160509-6168-g0p27f
+installing default bcrypt_ext libraries
