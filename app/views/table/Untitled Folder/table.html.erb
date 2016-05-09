@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Table</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <style>
+
+
+
+    #box{
+    
+    bottom: -400px ;
+     left: 10px ;
+     
+  position: relative;
+
+
+
+}
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    .textarea {
+    overflow-y: scroll;
+    resize: none; 
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {
+      height: 50px;
+    }
+
+        .main-table {
+      background-color: green;
+      height: 500px;
+
+      width: 2000;
+
+    }
+
+    .my-hand {
+      background-color: black;
+      height: 200px;
+    }
+    
+    /* Set gray background color and 50% height */
+    .sidenav {
+      padding-top: 0px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+
+    .score {
+
+    box-sizing: border-box;
+    border: none;
+    background-color: green;
+    color: black;
+    text-align: center; 
+       
+}
+
+    .ace_of_clubs{
+width: 60px;
+height: 85px;
+border: 1px;
+border-radius: 5px;
+background-image: url('/assets/cards/ace_of_clubs.png');
+background-size: contain;
+}
+
+    .ace_of_hearts{
+width: 60px;
+height: 85px;
+border: 1px;
+border-radius: 5px;
+background-image: url('/assets/cards/ace_of_hearts.png');
+background-size: contain;
+}
+
+    .card-back{
+width: 60px;
+height: 85px;
+border: 1px;
+border-radius: 5px;
+background-image: url('/assets/card-back.png');
+background-size: contain;
+}
+
+.btn-space {
+    margin-right: 20px;
+}
+  
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-static-top" >
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Loby</a></li>
+        <li><a href="#">Leave</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-9">
+
+      <div class="row main-table">
+        
+        <div class="row">
+
+          <div class="col-sm-9">
+
+            <div class="container">
+
+              <table style="width:100%">
+                <tr>
+                  <th colspan="2"><center>User Name</center></th>
+                </tr>
+                <tr height= "100px">
+                  <td align="right"><div class="card-back"></div></td>
+                  <td align="left"><div class="card-back"></div></td>
+                </tr>
+                <tr>
+                  <td colspan="2"><center><input type="text" class="score" name="score" disabled="true" value="$100" maxlength="4" size="4"></center></td>
+                </tr>
+              </table>
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="row">
+        <br><br>
+          <div class="col-sm-9">
+
+            <div class="col-sm-1">
+              
+              <div class="container">
+
+                <table style="width:20%">
+                  <tr>
+                    <th colspan="2"><center>User Name</center></th>
+                  </tr>
+                  <tr height= "100px">
+                    <td align="right"><div class="card-back"></div></td>
+                    <td align="left"><div class="card-back"></div></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><center><input type="text" class="score" name="score" disabled="true" value="$100" maxlength="4" size="4"></center></td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+
+
+
+            <div class="col-sm-5">
+              
+              <div class="container">
+
+                <table style="width:20%" align="center">
+                  <tr>
+                    <th colspan="5"><center>User Name</center></th>
+                  </tr>
+                  <tr height= "100px">
+                    <td><div class="card-back"></div></td>
+                    <td><div class="card-back"></div></td>
+                    <td><div class="card-back"></div></td>
+                    <td><div class="card-back"></div></td>
+                    <td><div class="card-back"></div></td>
+                  </tr>
+                  <tr>
+                    <td colspan="5"><center><input type="text" class="score" name="score" disabled="true" value="$100" maxlength="4" size="4"></center></td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+
+
+            <div class="col-sm-2">
+              
+              <div class="container">
+
+                <table style="width:120%">
+                  <tr>
+                    <th colspan="2"><center>User Name</center></th>
+                  </tr>
+                  <tr height= "100px">
+                    <td align="right"><div class="card-back"></div></td>
+                    <td align="left"><div class="card-back"></div></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><center><input type="text" class="score" name="score" disabled="true" value="$100" maxlength="4" size="4"></center></td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="col-sm-9">
+
+            <div class="container">
+
+              <table style="width:120%">
+                <tr><br><br>
+                  <th colspan="2"><center>Your Hand</center></th>
+                </tr>
+                <tr height= "100px">
+                  <td align="right"><div class="card-back"></div></td>
+                  <td align="left"><div class="card-back"></div></td>
+                </tr>
+                <tr>
+                  <td colspan="2"><center><input type="text" class="score" name="score" disabled="true" value="$100" maxlength="4" size="4"></center></td>
+                </tr>
+              </table>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="row my-hand">
+
+        <div class="col-sm-9">
+          
+          <div class="col-sm-8">
+            <div class="btn-group btn-space">
+              <button type="button" class="btn btn-primary">Fold</button>
+              <button type="button" class="btn btn-primary">Check</button>
+              <button type="button" class="btn btn-primary">Call</button>
+              <button type="button" class="btn btn-primary">Raise</button>
+            </div>
+            <div><input type="text" class="score" name="score" disabled="true" value="$100" maxlength="4" size="4"></div>
+          </div>
+          
+
+          <br>
+          <div class="col-sm-1">
+              
+              <div class="container">
+
+                <table style="width:20%">
+                  <tr>
+                    <th colspan="2"><center>Your Hand</center></th>
+                  </tr>
+                  <tr height= "100px">
+                    <td align="right"><div class="ace_of_hearts"></div></td>
+                    <td align="left"><div class="ace_of_clubs"></div></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><center></center></td>
+                  </tr>
+                </table>
+              </div>
+
+        </div>
+      </div>
+        
+      </div>
+
+    </div>
+
+
+    <div class="col-sm-3 navbar navbar-inverse navbar-fixed-bottom" id="box">
+
+        <label for="comment">Chat</label>
+        <textarea class="form-control textarea" rows="5" id="chat"></textarea>
+
+          <div class="dropdown" left>
+    <button class="btn btn-default dropdown-toggle" type="button" id="chatMessage" data-toggle="dropdown">Your Message
+    <span class=""></span></button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Nice Hand</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Good luck</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Lucky</a></li>
+    </ul>
+    <button type="submit" class="btn btn-default">Submit</button>
+
+
+      </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>Copyright (C) 667GRP4</p>
+</footer>
+
+</body>
+</html>

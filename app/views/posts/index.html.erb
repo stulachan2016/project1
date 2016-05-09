@@ -1,0 +1,362 @@
+
+
+<div class ="navbar navbar-inverse navbar-static-top ">
+  
+      <ul class= "nav navbar-nav navbar-right"> </ul>
+</div>
+<style>
+
+
+div.scroll {
+    background-color: #dfe3ee;
+    width: 275px;
+    height: 165px;
+    overflow-y: scroll;
+    float:right;
+      border-style: ridge;
+    border-width: 3px;
+}
+
+div.room{
+    
+    
+    float:right;
+   padding: 13px 99px;
+    background-color: #8b9dc3;
+   font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+
+    
+    
+  
+
+div.cont{
+    
+    width: 700px;
+    height: 290px;
+     position: relative;
+    left: 938px;
+    bottom: -165px;
+    
+    
+    
+
+
+
+}
+
+#btn{
+  padding: 7px 58px;
+  background-color: #8b9dc3;
+  float:right;
+}
+
+
+
+
+.chat
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.chat li
+{
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #B3A9A9;
+}
+
+.chat li.left .chat-body
+{
+    margin-left: 60px;
+}
+
+.chat li.right .chat-body
+{
+    margin-right: 60px;
+}
+
+
+.chat li .chat-body p
+{
+    margin: 0;
+    color: #777777;
+}
+
+.panel .slidedown .glyphicon, .chat .glyphicon
+{
+    margin-right: 5px;
+}
+
+.panel-body
+{
+    overflow-y: scroll;
+    height: 200px;
+}
+
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+    width: 5px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
+
+
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 45px;
+  height: 45px;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+
+
+<button id="btn" class="btn btn-lg btn-warning" onclick="toggleByClass('scroll');">Turn on Chat Room</button>
+
+<!--<script>
+        $("#btn").click(function () {
+            $(this).text("     Close Chat Room      ");
+        });
+    </script>-->
+
+
+<script type="text/javascript">
+      $(window).load(function(){
+    $(".scroll").hide();
+  });
+
+
+
+    </script>
+
+<script type="text/javascript">
+    function toggleByClass(className) {
+
+    <!-- $('.'+className).delay(500).fadeOut('slow');-->
+
+         <!--$("."+className).toggle();-->
+
+            $("#btn").text($("#btn").text() == 'Turn off Chat Room' ? 'Turn on Chat Room' : 'Turn off Chat Room')
+        
+        $("."+className).fadeToggle(1000);
+        $(".loader").fadeToggle(2000);
+
+
+
+    }
+
+
+
+    
+
+    </script>
+
+<!--<div class="room" >
+    <font color="white"><strong>Chat Room</strong></font>
+
+</div>-->
+<br>
+<br>
+
+<div class= "scroll" id="table-wrapper">
+
+<div class="#" id="table-scroll">
+       <section id="#">
+
+
+
+
+<!--<p id="notice"><%= notice %></p>-->
+
+
+<table>
+  <thead>
+    
+  </thead>
+
+
+
+  <tbody>
+
+   <!--<% @posts.each do |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= post.content %></td>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>-->
+<tr>
+        <td >
+             <center><div class="loader"></div></center>
+        </td>
+    </tr>
+<% @users.each do |u| %>
+
+    <% if user_signed_in? %>
+
+
+   
+    
+      <tr>
+
+      <td >
+      <svg height="10" width="10"><circle cx="5" cy="5" r="3" stroke="green" stroke-width="2" fill="green" /><i>online</i></svg>&nbsp;&nbsp;
+      <%= u.email %> </td>
+
+
+     <td>
+<%= link_to "Chat", "#",:onclick => "toggleByClass('cont')",class: "btn btn-success btn-xs start-conversation",
+                    "data-sid" => u.email %>
+        
+      </td>
+
+     <% end %>
+      </tr>
+
+      <% end %>
+
+     
+  </tbody>
+
+
+ 
+</table>
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>
+
+</section>
+</div>
+
+</div>
+<div class="cont">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-comment"></span> Chat
+                    <div class="btn-group pull-right">
+                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                        </button>
+                        <ul class="dropdown-menu slidedown">
+                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-refresh">
+                            </span>Refresh</a></li>
+                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-ok-sign">
+                            </span>Available</a></li>
+                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-remove">
+                            </span>Busy</a></li>
+                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-time"></span>
+                                Away</a></li>
+                            <li class="divider"></li>
+                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-off"></span>
+                                Sign Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <ul class="chat">
+                        <li class="left clearfix"><span class="chat-img pull-left">
+                            <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
+                        </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <strong class="primary-font">Sender Name</strong> <small class="pull-right text-muted">
+                                        <span class="glyphicon glyphicon-time"></span>time</small>
+                                </div>
+                                <p>
+                                    sender
+                                </p>
+                            </div>
+                        </li>
+                        <li class="right clearfix"><span class="chat-img pull-right">
+                            <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" class="img-circle" />
+                        </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>Time</small>
+                                    <strong class="pull-right primary-font">Recevier</strong>
+                                </div>
+                                <p>
+                                    message
+                                </p>
+                            </div>
+                        </li>
+                        
+                        
+                          
+                    
+                    </ul>
+                </div>
+                <div class="panel-footer">
+                    <div class="input-group">
+                        <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+                        <span class="input-group-btn">
+                            <button class="btn btn-warning btn-sm" id="btn-chat">
+                                Send</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer >
+    <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container">
+           
+           <div class="col-md-4" >
+            <font color="blue">Copyright &copy; 2016 CSC 667 Group # 4 </font>
+            </div>
+
+            <div class="col-md-8">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Home</a></li>
+                    <li><a data-popup-open="#" href= "#">Terms &amp; Conditions</a></li>
+                    <li><a data-popup-open="#" href="#">Privacy Policy</a></li>
+                    <li><a data-popup-open="#" href="#">About Us</a></li>
+                </ul><!-- /.nav -->
+            </div>
+
+
+        </div>
+    </div>
+</footer>
+
+

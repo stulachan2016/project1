@@ -1,0 +1,296 @@
+<div class ="navbar navbar-inverse navbar-static-top ">
+  
+      <ul class= "nav navbar-nav navbar-right"> </ul>
+</div>
+
+
+
+<head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link rel="stylesheet" type="text/css" href="welcome.scss" />
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        // When the DOM is ready, initialize the scripts.
+        jQuery(function( $ ){
+            // Get a reference to the container.
+            var container = $( ".cont" );
+            // Bind the link to toggle the slide.
+            $( "#chat" ).click(
+                function( event ){
+                    // Prevent the default event.
+                    event.preventDefault();
+                    // Toggle the slide based on its current
+                    // visibility.
+                    if (container.is( ":visible" )){
+                        // Hide - slide up.
+                        container.slideUp( 2000 );
+                    } else {
+                        // Show - slide down.
+                        container.slideDown( 2000 );
+                    }
+                }
+            );
+        });
+    </script>
+
+
+</head>
+
+<style>
+
+
+ .poker_table{
+    width: 225px;
+    height: 129px;
+    bottom: -20px ;
+     left: 150px ;
+background-image: url('/assets/poker_table.jpg');
+
+
+position: relative;
+}
+
+
+.poker_table_1{
+    width: 100px;
+    height: 10px;
+    bottom: -50px ;
+     left: 80px ;
+     
+padding: 2px 2px;
+position: relative;
+
+
+
+}
+
+
+
+div.cont{
+    
+    width: 900px;
+    height: 290px;
+     
+    bottom: 120px ;
+            display: none ;
+            left: 20px ;
+            position: fixed ;
+
+
+
+}
+
+
+#tex{
+  padding: 2px 2px;
+  background-color: #8b9dc3;
+  float:right;
+}
+
+#btn{
+  padding: 9px 9px;
+  background-color: #8b9dc3;
+   float:right;
+}
+
+
+
+
+
+
+
+.chat
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.chat li
+{
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #B3A9A9;
+}
+
+.chat li.left .chat-body
+{
+    margin-left: 60px;
+}
+
+.chat li.right .chat-body
+{
+    margin-right: 60px;
+}
+
+
+.chat li .chat-body p
+{
+    margin: 0;
+    color: #777777;
+}
+
+.panel .slidedown .glyphicon, .chat .glyphicon
+{
+    margin-right: 5px;
+}
+
+.panel-body
+{
+    overflow-y: scroll;
+    height: 200px;
+}
+
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+    width: 5px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
+
+
+
+</style>
+
+<div style="display:none">
+  <%= hidden_field_tag :socket_id %>
+</div>
+
+<a href="table/table" >
+ <div class="poker_table">
+                    
+                <div class="poker_table_1"><strong>Join Table</strong></div>
+
+                      
+                </div>
+                </a>
+
+<div class="cont">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-comment"></span> <strong><a href="#">Close Chat </a></strong>
+                    <div class="btn-group pull-right">
+                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                        </button>
+                        <ul class="dropdown-menu slidedown">
+                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-refresh">
+                            </span>Refresh</a></li>
+                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-ok-sign">
+                            </span>Available</a></li>
+                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-remove">
+                            </span>Busy</a></li>
+                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-time"></span>
+                                Away</a></li>
+                            <li class="divider"></li>
+                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-off"></span>
+                                Sign Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <ul class="chat">
+                        <li class="left clearfix"><span class="chat-img pull-left">
+                            <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
+                        </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <strong class="primary-font">User email </strong> 
+                                      <%= current_user.email %> 
+                                    <small class="pull-right text-muted">
+                                        <span class="glyphicon glyphicon-time"></span>time</small>
+                                </div>
+                                <ul class="chat_messages"></ul>
+                            </div>
+                        </li>
+
+                        
+                        
+                        
+                          
+                    
+                    </ul>
+                </div>
+
+
+               
+
+
+                <div class="panel-footer">
+
+
+                    <%= form_for @chat_message, remote: true do |f| %>
+ 
+                    <div class="input-group">
+                      <!--<div id="btn-input" class="form-control input-sm">-->
+                      
+                        <div id ="tex"> <%= f.text_area :message, rows: 1, cols: 27%>
+
+                        <div id="btn">
+                         <%= f.submit 'Send' %></div>
+                        </div>
+
+                        
+                              
+                          <!--</div>-->
+                                  
+                      </div>
+                    
+                        <% end %>
+
+                   <!--<div class="input-group">
+                        <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+                        <span class="input-group-btn">
+                            <button class="btn btn-warning btn-sm" id="btn-chat">
+                                Send</button>
+                        </span>
+                    </div>-->
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer >
+    <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container">
+           
+           <div class="col-md-4" >
+            <font color="blue">Copyright &copy; 2016 CSC 667 Group # 4 </font>
+            </div>
+
+            <div class="col-md-8">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" id="chat">Chat</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a data-popup-open="#" href= "#">Terms &amp; Conditions</a></li>
+                    <li><a data-popup-open="#" href="#">Privacy Policy</a></li>
+                    <li><a data-popup-open="#" href="#">About Us</a></li>
+                </ul><!-- /.nav -->
+            </div>
+
+
+        </div>
+    </div>
+</footer>
