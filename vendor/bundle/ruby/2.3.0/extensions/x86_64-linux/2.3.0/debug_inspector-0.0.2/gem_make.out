@@ -1,0 +1,15 @@
+current directory: /home/stulachan/667-workspace/heroku/poker/vendor/bundle/ruby/2.3.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+/home/stulachan/.rvm/rubies/ruby-2.3.0/bin/ruby -r ./siteconf20160509-13961-xto8yg.rb extconf.rb
+creating Makefile
+
+current directory: /home/stulachan/667-workspace/heroku/poker/vendor/bundle/ruby/2.3.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR=" clean
+
+current directory: /home/stulachan/667-workspace/heroku/poker/vendor/bundle/ruby/2.3.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.so
+
+current directory: /home/stulachan/667-workspace/heroku/poker/vendor/bundle/ruby/2.3.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug_inspector.so ./.gem.20160509-13961-i1d2kj
